@@ -1,31 +1,49 @@
 <script setup lang="ts">
-/*
-CHALLENGE: Turn the provided HTML/CSS mockup into a Vue app that
-           uses three components: Header, Main, and Footer.
+import { ref } from "vue";
+
+const array = ref([
+  {
+    ajdective: "Lightweight",
+    description:
+      "I am incredibly small and fast! My core library is only around 30KB, so I won't slow you down.",
+  },
+  {
+    ajdective: "Approachable",
+    description:
+      "Easy to learn and use, even for beginners. I have a gentle learning curve, clear documentation, and a supportive community.",
+  },
+  {
+    ajdective: "Versatile",
+    description:
+      "I can handle everything from simple interactive elements to complex single-page applications. I'm great for small projects and large-scale applications alike.",
+  },
+]);
 </script>
 
 <template>
   <main>
     <section>
-      <h2>I'm <span class="highlight">Lightweight</span></h2>
+      <h2>
+        I'm <span class="highlight">{{ array[0]?.ajdective }}</span>
+      </h2>
       <p>
-        I am incredibly small and fast! My core library is only around 30KB, so
-        I won't slow you down.
+        {{ array[0]?.description }}
       </p>
     </section>
     <section>
-      <h2>I'm <span class="highlight">Approachable</span></h2>
+      <h2>
+        I'm <span class="highlight">{{ array[1]?.ajdective }}</span>
+      </h2>
       <p>
-        Easy to learn and use, even for beginners. I have a gentle learning
-        curve, clear documentation, and a supportive community.
+        {{ array[1]?.description }}
       </p>
     </section>
     <section>
-      <h2>I'm <span class="highlight">Versatile</span></h2>
+      <h2>
+        I'm <span class="highlight">{{ array[2]?.ajdective }}</span>
+      </h2>
       <p>
-        I can handle everything from simple interactive elements to complex
-        single-page applications. I'm great for small projects and large-scale
-        applications alike.
+        {{ array[2]?.description }}
       </p>
     </section>
   </main>
